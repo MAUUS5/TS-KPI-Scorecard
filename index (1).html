@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAU Talent Solutions | KPI Scorecard</title>
+<style>
+:root{
+  --bg-1:#0a1830; --bg-2:#0f2140; --header-bg:#122a4d;
+  --tory:#105090; --tory-light:#3b7fc4;
+  --meadow:#16b684; --meadow-dim:rgba(22,182,132,0.45);
+  --amber:#f5a623; --amber-dim:rgba(245,166,35,0.45);
+  --red:#e5484d; --red-dim:rgba(229,72,77,0.45);
+  --text-primary:#f4f7fb; --text-secondary:#a9b6cc; --text-muted:#7386a3;
+  --card-bg:rgba(255,255,255,0.04); --card-border:rgba(255,255,255,0.08);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html,body{
+  width:100%; height:100%; background:radial-gradient(ellipse at top, var(--bg-2), var(--bg-1) 70%);
+  color:var(--text-primary); font-family:'Segoe UI', Arial, Helvetica, sans-serif; overflow:hidden;
+}
+.slide{
+  position:fixed; inset:0; display:flex; flex-direction:column;
+  padding:clamp(20px,2.5vw,48px) clamp(28px,4vw,72px);
+  opacity:0; pointer-events:none; transition:opacity .6s ease;
+}
+.slide.active{ opacity:1; pointer-events:auto; }
+
+/* ---------- Header ---------- */
+.hdr{
+  display:flex; align-items:center; justify-content:space-between;
+  padding-bottom:clamp(10px,1.4vw,20px); margin-bottom:clamp(14px,2vw,28px);
+  border-bottom:2px solid var(--card-border);
+}
+.hdr .brand{ display:flex; align-items:center; gap:16px; }
+.hdr .brand .mark{
+  width:clamp(34px,3vw,48px); height:clamp(34px,3vw,48px); border-radius:10px;
+  background:linear-gradient(135deg, var(--tory), var(--meadow));
+  display:flex; align-items:center; justify-content:center;
+  font-weight:800; font-size:clamp(14px,1.4vw,20px); letter-spacing:1px;
+}
+.hdr h1{ font-size:clamp(20px,2.3vw,34px); font-weight:700; letter-spacing:.3px; }
+.hdr .subtitle{ color:var(--text-secondary); font-size:clamp(11px,1vw,15px); margin-top:2px; }
+.hdr .meta{ text-align:right; color:var(--text-secondary); font-size:clamp(11px,1vw,15px); }
+.hdr .meta .date{ color:var(--text-primary); font-weight:600; font-size:clamp(13px,1.2vw,18px); }
+
+/* ---------- Title slide ---------- */
+.title-slide{ align-items:center; justify-content:center; text-align:center; }
+.title-slide .mark-lg{
+  width:clamp(70px,8vw,120px); height:clamp(70px,8vw,120px); border-radius:24px;
+  background:linear-gradient(135deg, var(--tory), var(--meadow));
+  display:flex; align-items:center; justify-content:center; margin-bottom:28px;
+  font-weight:800; font-size:clamp(24px,3vw,40px); box-shadow:0 12px 40px rgba(22,182,132,.25);
+}
+.title-slide h1{ font-size:clamp(34px,5.5vw,72px); font-weight:800; letter-spacing:.5px; }
+.title-slide h2{
+  font-size:clamp(16px,2vw,28px); color:var(--meadow); font-weight:600; margin-top:10px; letter-spacing:2px; text-transform:uppercase;
+}
+.title-slide .tagline{ margin-top:26px; color:var(--text-secondary); font-size:clamp(13px,1.3vw,19px); max-width:60ch; }
+.title-slide .date-badge{
+  margin-top:38px; padding:10px 26px; border-radius:999px; border:1px solid var(--card-border);
+  background:var(--card-bg); color:var(--text-secondary); font-size:clamp(12px,1.1vw,16px);
+}
+
+/* ---------- KPI grid ---------- */
+.kpi-grid{
+  flex:1; display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(14px,1.6vw,26px);
+  align-content:center;
+}
+.kpi-card{
+  background:var(--card-bg); border:1px solid var(--card-border); border-radius:18px;
+  padding:clamp(18px,2vw,30px); display:flex; flex-direction:column; justify-content:center;
+  border-top:4px solid var(--accent-color, var(--meadow));
+  box-shadow:0 8px 30px rgba(0,0,0,.25);
+}
+.kpi-card .label{ color:var(--text-secondary); font-size:clamp(12px,1.05vw,16px); font-weight:600; text-transform:uppercase; letter-spacing:1px; }
+.kpi-card .value{ font-size:clamp(32px,4.2vw,58px); font-weight:800; margin-top:8px; line-height:1; color:var(--accent-color, var(--meadow)); }
+.kpi-card .sub{ color:var(--text-muted); font-size:clamp(11px,.95vw,14px); margin-top:8px; }
+
+/* ---------- Section layout: chart + side panel ---------- */
+.section-title{ font-size:clamp(20px,2.4vw,32px); font-weight:700; margin-bottom:6px; }
+.section-desc{ color:var(--text-secondary); font-size:clamp(12px,1.05vw,16px); margin-bottom:clamp(14px,1.8vw,24px); }
+.two-col{ flex:1; display:grid; grid-template-columns:1.3fr 1fr; gap:clamp(16px,2vw,30px); min-height:0; }
+.panel{
+  background:var(--card-bg); border:1px solid var(--card-border); border-radius:18px;
+  padding:clamp(16px,1.8vw,28px); min-height:0; display:flex; flex-direction:column;
+}
+.panel h3{ font-size:clamp(14px,1.3vw,19px); color:var(--text-secondary); font-weight:600; margin-bottom:12px; text-transform:uppercase; letter-spacing:.8px; }
+
+/* bars */
+.bar-row{ display:flex; align-items:center; gap:12px; margin-bottom:clamp(8px,1vw,14px); }
+.bar-row .bar-label{ width:32%; font-size:clamp(11px,.95vw,14.5px); color:var(--text-secondary); text-align:right; flex-shrink:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.bar-row .bar-track{ flex:1; height:clamp(16px,1.8vw,26px); background:rgba(255,255,255,.06); border-radius:8px; overflow:hidden; position:relative;}
+.bar-row .bar-fill{ height:100%; border-radius:8px; display:flex; align-items:center; justify-content:flex-end; padding-right:8px; color:#04150e; font-weight:700; font-size:clamp(10px,.9vw,13px); white-space:nowrap; }
+
+/* donut */
+.donut-wrap{ display:flex; align-items:center; gap:clamp(14px,2vw,28px); flex:1; }
+.donut-legend{ display:flex; flex-direction:column; gap:10px; }
+.legend-item{ display:flex; align-items:center; gap:10px; font-size:clamp(11px,1vw,15px); color:var(--text-secondary); }
+.legend-swatch{ width:14px; height:14px; border-radius:4px; flex-shrink:0; }
+.legend-item b{ color:var(--text-primary); }
+
+/* stacked trend chart */
+.trend-chart{ flex:1; display:flex; align-items:flex-end; gap:clamp(6px,.9vw,14px); padding-top:10px; min-height:0; }
+.trend-col{ flex:1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end; }
+.trend-stack{ width:100%; max-width:46px; display:flex; flex-direction:column-reverse; border-radius:4px 4px 0 0; overflow:hidden; }
+.trend-col .m-label{ margin-top:8px; font-size:clamp(9px,.78vw,12px); color:var(--text-muted); white-space:nowrap; }
+
+/* tables */
+table{ width:100%; border-collapse:collapse; font-size:clamp(11px,1vw,14.5px); }
+thead th{
+  text-align:left; color:var(--text-secondary); font-weight:600; text-transform:uppercase; font-size:clamp(9.5px,.8vw,12.5px);
+  letter-spacing:.6px; padding:8px 10px; border-bottom:2px solid var(--card-border);
+}
+tbody td{ padding:clamp(6px,.8vw,10px) 10px; border-bottom:1px solid var(--card-border); color:var(--text-primary); }
+tbody tr:hover{ background:rgba(255,255,255,.03); }
+.pill{ display:inline-block; padding:3px 10px; border-radius:999px; font-size:.85em; font-weight:700; }
+.pill.good{ background:var(--meadow-dim); color:#c7fce9; }
+.pill.warn{ background:var(--amber-dim); color:#ffe6bb; }
+.pill.bad{ background:var(--red-dim); color:#ffd3d4; }
+
+/* full table slide */
+.table-slide .table-wrap{ flex:1; overflow:hidden; background:var(--card-bg); border:1px solid var(--card-border); border-radius:18px; padding:clamp(10px,1.4vw,20px); }
+
+/* footer */
+.footer{
+  display:flex; align-items:center; justify-content:space-between; margin-top:clamp(10px,1.4vw,20px);
+  padding-top:clamp(8px,1vw,14px); border-top:1px solid var(--card-border); color:var(--text-muted); font-size:clamp(10px,.9vw,13px);
+}
+.page-indicator{ color:var(--text-secondary); font-weight:600; }
+.progress-track{ position:fixed; left:0; bottom:0; width:100%; height:4px; background:rgba(255,255,255,.06); z-index:50;}
+.progress-fill{ height:100%; background:linear-gradient(90deg, var(--tory), var(--meadow)); width:0%; }
+
+/* nav buttons */
+.nav-btn{
+  position:fixed; top:50%; transform:translateY(-50%); z-index:60; width:44px; height:44px; border-radius:50%;
+  background:rgba(255,255,255,.05); border:1px solid var(--card-border); color:var(--text-secondary);
+  display:flex; align-items:center; justify-content:center; font-size:20px; cursor:pointer; opacity:.25; transition:opacity .2s;
+}
+.nav-btn:hover{ opacity:1; }
+.nav-btn.prev{ left:14px; } .nav-btn.next{ right:14px; }
+
+@media (max-width: 900px){
+  .kpi-grid{ grid-template-columns:repeat(2,1fr); }
+  .two-col{ grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<div id="slides"></div>
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+<div class="nav-btn prev" id="prevBtn">&#10094;</div>
+<div class="nav-btn next" id="nextBtn">&#10095;</div>
+
+<script>
+const BASE_INTERVAL = 10000;
+const TABLE_INTERVAL = 16000;
+
+const BRAND = { tory:'#105090', meadow:'#16b684', amber:'#f5a623', red:'#e5484d', torylight:'#3b7fc4' };
+
+let DATA = null;
+let slides = [];
+let current = 0;
+let timer = null;
+let progressStart = 0;
+let progressDuration = BASE_INTERVAL;
+let rafId = null;
+
+function fmtPct(n){ return (Math.round(n*10)/10) + '%'; }
+function esc(s){ return (s===null||s===undefined) ? '' : String(s); }
+
+function headerHTML(subtitle){
+  return `
+  <div class="hdr">
+    <div class="brand">
+      <div class="mark">MAU</div>
+      <div>
+        <h1>Talent Solutions KPI Scorecard</h1>
+        <div class="subtitle">${subtitle}</div>
+      </div>
+    </div>
+    <div class="meta">
+      <div class="date">${DATA.period_label}</div>
+      <div>Live Recruiting Performance</div>
+    </div>
+  </div>`;
+}
+
+function footerHTML(pageLabel){
+  return `<div class="footer"><div>MAU Workforce Solutions &bull; Talent Solutions Division</div><div class="page-indicator">${pageLabel}</div></div>`;
+}
+
+/* ---------------- Chart helpers (return HTML strings) ---------------- */
+function bucketColor(name){
+  const n = (name||'').toLowerCase();
+  if(n.includes('late') || n.includes('no cert') || n.includes('> 90') || n.includes('non-compliant') || n.includes('missing')) return BRAND.red;
+  if(n.includes('early') || n.includes('before')) return BRAND.torylight;
+  if(n.includes('same day') || n.includes('on time') || n.includes('on-time') || n.includes('within') || n.includes('compliant')) return BRAND.meadow;
+  return BRAND.amber;
+}
+
+function barChart(data, labelKey, valueKey){
+  const max = Math.max(...data.map(d=>d[valueKey]), 1);
+  return data.map(d=>{
+    const pct = Math.max((d[valueKey]/max*100), 4);
+    const color = d.color || bucketColor(d[labelKey]);
+    return `<div class="bar-row">
+      <div class="bar-label">${esc(d[labelKey])}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${color}">${esc(d[valueKey])}</div></div>
+    </div>`;
+  }).join('');
+}
+
+function donutSVG(data, valueKey, labelKey, size){
+  size = size || 200;
+  const total = data.reduce((a,d)=>a+d[valueKey],0) || 1;
+  const r = size/2 - 14, cx = size/2, cy = size/2, circ = 2*Math.PI*r;
+  let offset = 0;
+  const segs = data.map(d=>{
+    const frac = d[valueKey]/total;
+    const dash = frac*circ;
+    const color = d.color || bucketColor(d[labelKey]);
+    const seg = `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${color}" stroke-width="22"
+      stroke-dasharray="${dash} ${circ-dash}" stroke-dashoffset="${-offset}" transform="rotate(-90 ${cx} ${cy})" stroke-linecap="butt"/>`;
+    offset += dash;
+    return seg;
+  }).join('');
+  return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+    ${segs}
+    <text x="${cx}" y="${cy-4}" text-anchor="middle" fill="${BRAND.meadow}" font-size="${size*0.15}" font-weight="800" font-family="Segoe UI">${total}</text>
+    <text x="${cx}" y="${cy+size*0.11}" text-anchor="middle" fill="#a9b6cc" font-size="${size*0.06}" font-family="Segoe UI">total</text>
+  </svg>`;
+}
+
+function legendHTML(data, valueKey, labelKey){
+  const total = data.reduce((a,d)=>a+d[valueKey],0) || 1;
+  return `<div class="donut-legend">` + data.map(d=>{
+    const color = d.color || bucketColor(d[labelKey]);
+    const pct = fmtPct(d[valueKey]/total*100);
+    return `<div class="legend-item"><span class="legend-swatch" style="background:${color}"></span> <b>${esc(d[labelKey])}</b>&nbsp;&mdash; ${d[valueKey]} (${pct})</div>`;
+  }).join('') + `</div>`;
+}
+
+function stackedTrendChart(months, seriesKeys, seriesColors){
+  const totals = months.map(m => seriesKeys.reduce((a,k)=>a+(m[k]||0),0));
+  const max = Math.max(...totals, 1);
+  return `<div class="trend-chart">` + months.map(m=>{
+    const total = seriesKeys.reduce((a,k)=>a+(m[k]||0),0);
+    const h = Math.max(total/max*100, 2);
+    const segs = seriesKeys.map(k=>{
+      const v = m[k]||0;
+      const segH = total>0 ? (v/total*100) : 0;
+      return v>0 ? `<div style="height:${segH}%;background:${seriesColors[k]}" title="${k}: ${v}"></div>` : '';
+    }).join('');
+    return `<div class="trend-col">
+      <div class="trend-stack" style="height:${h}%">${segs}</div>
+      <div class="m-label">${m.month.split('-')[1]}</div>
+    </div>`;
+  }).join('') + `</div>`;
+}
+
+/* ---------------- Slide builders ---------------- */
+function buildSlides(){
+  slides = [];
+
+  // 1. Title
+  slides.push({interval:BASE_INTERVAL, html:`
+    <div class="slide title-slide">
+      <div class="mark-lg">MAU</div>
+      <h1>Talent Solutions</h1>
+      <h2>KPI Scorecard</h2>
+      <div class="tagline">Real-time recruiting performance across submission speed, placement approvals, credential compliance, and account coverage.</div>
+      <div class="date-badge">${DATA.period_label}</div>
+    </div>`});
+
+  // 2. KPI Grid
+  const reviewPct = DATA.review_total ? (DATA.review_same_day_count/DATA.review_total*100) : 0;
+  const approvalOnTime = DATA.approval_alltime.filter(b=>b.bucket==='On Time'||b.bucket==='Early').reduce((a,b)=>a+b.count,0);
+  const approvalPct = DATA.approval_alltime_total ? (approvalOnTime/DATA.approval_alltime_total*100) : 0;
+  // Use the most recent full month (skip a current month with too little data yet)
+  const credMonths = DATA.credential_trend;
+  let lastCred = credMonths[credMonths.length-1];
+  const lastCredTotal = lastCred ? (lastCred['On Time']+lastCred['Late']+lastCred['None']) : 0;
+  if(credMonths.length>1 && lastCredTotal < 30){ lastCred = credMonths[credMonths.length-2]; }
+  const credTotal = lastCred ? (lastCred['On Time']+lastCred['Late']+lastCred['None']) : 0;
+  const credPct = credTotal ? (lastCred['On Time']/credTotal*100) : 0;
+  const kpis = [
+    {label:'Submission Review Speed', value: fmtPct(reviewPct), sub:`${DATA.review_same_day_count} of ${DATA.review_total} submissions reviewed same day`, color:BRAND.meadow},
+    {label:'Placement Approval On-Time', value: fmtPct(approvalPct), sub:`${approvalOnTime.toLocaleString()} of ${DATA.approval_alltime_total.toLocaleString()} placements, all-time`, color:BRAND.tory==='#105090'?'#3b7fc4':BRAND.tory},
+    {label:'Credential Compliance', value: fmtPct(credPct), sub:`${lastCred?lastCred.month:''} &bull; certifications filed on time`, color:BRAND.meadow},
+    {label:'Avg. Lead Time to Fill', value: (DATA.avg_lead_time_to_fill ?? '—')+' days', sub:'Job order added &rarr; placement approved', color:BRAND.amber},
+    {label:'Avg. Total Time to Fill', value: (DATA.avg_total_time_to_fill ?? '—')+' days', sub:'Job order added &rarr; placement start', color:BRAND.amber},
+    {label:'Client Check-Ins', value: String(DATA.client_checkins_count), sub:`Logged this month &bull; ${DATA.period_label.split(',')[0]}`, color:'#3b7fc4'},
+  ];
+  slides.push({interval:BASE_INTERVAL, html:`
+    <div class="slide">
+      ${headerHTML('Headline Performance Indicators')}
+      <div class="kpi-grid">
+        ${kpis.map(k=>`<div class="kpi-card" style="--accent-color:${k.color}">
+          <div class="label">${k.label}</div>
+          <div class="value">${k.value}</div>
+          <div class="sub">${k.sub}</div>
+        </div>`).join('')}
+      </div>
+      ${footerHTML('Overview')}
+    </div>`});
+
+  // 3. Submission Review Speed
+  const reviewRows = DATA.review_list.slice(0,10);
+  slides.push({interval:TABLE_INTERVAL, html:`
+    <div class="slide">
+      ${headerHTML('Time to Review Submissions')}
+      <div class="section-title">Submission Review Speed</div>
+      <div class="section-desc">How quickly new candidate submissions receive their first recruiter review.</div>
+      <div class="two-col">
+        <div class="panel">
+          <h3>Recent Submissions Reviewed</h3>
+          <div style="overflow:auto;flex:1;">
+          <table><thead><tr><th>Candidate</th><th>Client</th><th>Job Title</th><th>Submitted</th><th>Status</th></tr></thead>
+          <tbody>${reviewRows.map(r=>`<tr><td>${esc(r.candidate)}</td><td>${esc(r.client)}</td><td>${esc(r.job)}</td><td>${esc(r.submitted)}</td><td><span class="pill good">${esc(r.bucket)}</span></td></tr>`).join('')}</tbody></table>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Same-Day Review Rate</h3>
+          <div class="donut-wrap">
+            ${donutSVG(DATA.review_speed_today,'count','bucket',190)}
+            ${legendHTML(DATA.review_speed_today,'count','bucket')}
+          </div>
+        </div>
+      </div>
+      ${footerHTML('Review Speed')}
+    </div>`});
+
+  // 4. Approval Timeliness Trend
+  slides.push({interval:BASE_INTERVAL, html:`
+    <div class="slide">
+      ${headerHTML('Placement vs. Approval Timeliness')}
+      <div class="section-title">Approval Timeliness Trend</div>
+      <div class="section-desc">Placements approved Early, On Time, or Late relative to target &mdash; last ${DATA.approval_trend.length} months.</div>
+      <div class="two-col">
+        <div class="panel">
+          <h3>Monthly Trend</h3>
+          ${stackedTrendChart(DATA.approval_trend, ['Early','On Time','Late'], {'Early':BRAND.torylight,'On Time':BRAND.meadow,'Late':BRAND.red})}
+        </div>
+        <div class="panel">
+          <h3>All-Time Breakdown</h3>
+          <div class="donut-wrap">
+            ${donutSVG(DATA.approval_alltime,'count','bucket',190)}
+            ${legendHTML(DATA.approval_alltime,'count','bucket')}
+          </div>
+        </div>
+      </div>
+      ${footerHTML('Approval Timeliness')}
+    </div>`});
+
+  // 5. Credential Compliance
+  const today = new Date(DATA.generated);
+  const credExpiring = DATA.credential_detail.filter(c=>c.expires && new Date(c.expires) >= today)
+    .sort((a,b)=> new Date(a.expires) - new Date(b.expires)).slice(0,10);
+  slides.push({interval:TABLE_INTERVAL, html:`
+    <div class="slide">
+      ${headerHTML('Existing Credential Audit')}
+      <div class="section-title">Credential Compliance</div>
+      <div class="section-desc">On-time filing of required certifications, and upcoming credential expirations to action.</div>
+      <div class="two-col">
+        <div class="panel">
+          <h3>Monthly Filing Trend</h3>
+          ${stackedTrendChart(DATA.credential_trend, ['On Time','Late','None'], {'On Time':BRAND.meadow,'Late':BRAND.amber,'None':BRAND.red})}
+        </div>
+        <div class="panel">
+          <h3>Upcoming Expirations</h3>
+          <div style="overflow:auto;flex:1;">
+          <table><thead><tr><th>Associate</th><th>Credential</th><th>Expires</th></tr></thead>
+          <tbody>${credExpiring.map(c=>`<tr><td>${esc(c.associate)}</td><td>${esc(c.cert)}</td><td>${esc(c.expires)}</td></tr>`).join('')}</tbody></table>
+          </div>
+        </div>
+      </div>
+      ${footerHTML('Credential Compliance')}
+    </div>`});
+
+  // 6. Recruiter Interview Activity
+  slides.push({interval:BASE_INTERVAL, html:`
+    <div class="slide">
+      ${headerHTML('Interview Activity')}
+      <div class="section-title">Recruiter Interview Activity</div>
+      <div class="section-desc">Unique candidates interviewed today, and interview-note documentation compliance.</div>
+      <div class="two-col">
+        <div class="panel">
+          <h3>Candidates Interviewed by Recruiter</h3>
+          ${barChart(DATA.interviews_by_recruiter,'recruiter','count')}
+        </div>
+        <div class="panel">
+          <h3>Interview Note Compliance</h3>
+          <div class="donut-wrap">
+            ${donutSVG(DATA.interview_notes_compliance,'count','bucket',190)}
+            ${legendHTML(DATA.interview_notes_compliance,'count','bucket')}
+          </div>
+        </div>
+      </div>
+      ${footerHTML('Interview Activity')}
+    </div>`});
+
+  // 7. Client Check-Ins & Transactional Compliance
+  slides.push({interval:BASE_INTERVAL, html:`
+    <div class="slide">
+      ${headerHTML('Client Engagement & Compliance')}
+      <div class="section-title">Client Check-Ins &amp; Transactional Compliance</div>
+      <div class="section-desc">Client relationship touchpoints logged this month and placement-ending transactional compliance.</div>
+      <div class="two-col">
+        <div class="panel">
+          <h3>Client Check-Ins This Month</h3>
+          <div style="overflow:auto;flex:1;">
+          <table><thead><tr><th>Date</th><th>Account</th><th>Contact</th><th>Assigned</th></tr></thead>
+          <tbody>${DATA.client_checkins_this_month.map(c=>`<tr><td>${esc(c.date)}</td><td>${esc(c.account)}</td><td>${esc(c.contact)}</td><td>${esc(c.assigned)}</td></tr>`).join('')}</tbody></table>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Transactional Compliance</h3>
+          ${DATA.transactional_compliance.map(t=>`
+            <div class="kpi-card" style="--accent-color:${bucketColor(t.bucket)};margin-bottom:12px;">
+              <div class="label">${esc(t.branch)}</div>
+              <div class="value" style="font-size:clamp(20px,2.4vw,30px)">${esc(t.bucket)}</div>
+              <div class="sub">${t.count} placement(s)</div>
+            </div>`).join('')}
+        </div>
+      </div>
+      ${footerHTML('Client & Compliance')}
+    </div>`});
+
+  // 8. Account Ownership by Staffing Specialist
+  slides.push({interval:TABLE_INTERVAL, html:`
+    <div class="slide">
+      ${headerHTML('Account Coverage')}
+      <div class="section-title">Account Ownership by Staffing Specialist</div>
+      <div class="section-desc">Active client accounts assigned to each Staffing Specialist.</div>
+      <div class="two-col">
+        <div class="panel">
+          <h3>Accounts per Specialist</h3>
+          ${barChart(DATA.ss_account_counts.map(s=>({...s,color:BRAND.tory==='#105090'?'#3b7fc4':BRAND.tory})),'owner','count')}
+        </div>
+        <div class="panel">
+          <h3>Account Directory</h3>
+          <div style="overflow:auto;flex:1;">
+          <table><thead><tr><th>Account</th><th>Owner</th></tr></thead>
+          <tbody>${DATA.accounts_by_ss.filter(a=>a.owner!=='Primary').slice(0,14).map(a=>`<tr><td>${esc(a.account)}</td><td>${esc(a.owner)}</td></tr>`).join('')}</tbody></table>
+          </div>
+        </div>
+      </div>
+      ${footerHTML('Account Coverage')}
+    </div>`});
+}
+
+/* ---------------- Slideshow engine ---------------- */
+function render(){
+  const container = document.getElementById('slides');
+  container.innerHTML = slides.map(s=>s.html).join('');
+  const els = container.querySelectorAll('.slide');
+  els.forEach((el,i)=>{ el.classList.toggle('active', i===current); });
+}
+
+function goTo(idx){
+  current = (idx + slides.length) % slides.length;
+  const els = document.querySelectorAll('.slide');
+  els.forEach((el,i)=>el.classList.toggle('active', i===current));
+  restartTimer();
+}
+function next(){ goTo(current+1); }
+function prev(){ goTo(current-1); }
+
+function restartTimer(){
+  clearTimeout(timer);
+  cancelAnimationFrame(rafId);
+  progressDuration = slides[current].interval;
+  progressStart = performance.now();
+  timer = setTimeout(next, progressDuration);
+  animateProgress();
+}
+function animateProgress(){
+  const fill = document.getElementById('progressFill');
+  function tick(){
+    const elapsed = performance.now() - progressStart;
+    const pct = Math.min(elapsed/progressDuration*100, 100);
+    fill.style.width = pct+'%';
+    if(pct<100){ rafId = requestAnimationFrame(tick); }
+  }
+  tick();
+}
+
+function init(data){
+  DATA = data;
+  buildSlides();
+  render();
+  restartTimer();
+}
+
+document.getElementById('nextBtn').addEventListener('click', next);
+document.getElementById('prevBtn').addEventListener('click', prev);
+document.addEventListener('keydown', e=>{
+  if(e.key==='ArrowRight' || e.key===' ') next();
+  if(e.key==='ArrowLeft') prev();
+});
+let touchX = null;
+document.addEventListener('touchstart', e=>{ touchX = e.touches[0].clientX; });
+document.addEventListener('touchend', e=>{
+  if(touchX===null) return;
+  const dx = e.changedTouches[0].clientX - touchX;
+  if(dx>50) prev(); else if(dx<-50) next();
+  touchX = null;
+});
+
+fetch('ts_kpi_data.json').then(r=>r.json()).then(init).catch(err=>{
+  document.getElementById('slides').innerHTML = `<div class="slide active" style="align-items:center;justify-content:center;text-align:center;">
+    <div><h1 style="font-size:28px;">Could not load ts_kpi_data.json</h1>
+    <p style="color:#a9b6cc;margin-top:10px;">Serve this folder over HTTP (e.g. GitHub Pages) &mdash; opening index.html directly from disk blocks the data fetch.</p></div></div>`;
+  console.error(err);
+});
+</script>
+</body>
+</html>

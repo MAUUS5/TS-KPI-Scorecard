@@ -1,0 +1,899 @@
+{
+  "generated": "2026-09-01",
+  "period_label": "September 1, 2026",
+  "ontime_fill_today": [
+    {
+      "bucket": "Started Same Day or Before Requested Date",
+      "count": 5
+    }
+  ],
+  "time_to_fill_today": [
+    {
+      "bucket": "Job Added Before Placement Start",
+      "count": 5
+    }
+  ],
+  "review_speed_today": [
+    {
+      "bucket": "Reviewed Same Day",
+      "count": 42
+    }
+  ],
+  "review_list": [
+    {
+      "candidate": "Marquis Cummings",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "MILLIKEN- Gerrish- Pendleton",
+      "job": "Quality Inspector",
+      "branch": "Anderson Industrial Staffing"
+    },
+    {
+      "candidate": "Daris Murry",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "Bosch Rexroth Corporation",
+      "job": "Assembler",
+      "branch": "Greenville Industrial Managed Services"
+    },
+    {
+      "candidate": "Javario  Miller ",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "KGM Gaming",
+      "job": "Re-Upholsterer and Assembler",
+      "branch": "Greenville Industrial Staffing"
+    },
+    {
+      "candidate": "Hakeem Hamilton",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "AFL TELECOMMUNICATIONS",
+      "job": "Production Associate",
+      "branch": "Greenville Industrial Staffing"
+    },
+    {
+      "candidate": "Omar Durrett",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "BORG WARNER",
+      "job": "Material Handler",
+      "branch": "Anderson Industrial Managed Services"
+    },
+    {
+      "candidate": "Steven  Guidry ",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "BORG WARNER",
+      "job": "Material Handler",
+      "branch": "Anderson Industrial Managed Services"
+    },
+    {
+      "candidate": "Jasmine Thomas",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "MICHELIN NORTH AMERICA, INC.",
+      "job": "Manufacturing Associate",
+      "branch": "Greenville Industrial Outsourcing"
+    },
+    {
+      "candidate": "Renne Da Silva",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "MICHELIN NORTH AMERICA, INC.",
+      "job": "Bloc Cutter",
+      "branch": "Anderson Industrial Outsourcing"
+    },
+    {
+      "candidate": "Jacob Willis",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "MILLIKEN Pendleton Finishing",
+      "job": "HVAC Technician",
+      "branch": "Anderson Industrial Staffing"
+    },
+    {
+      "candidate": "Alan Gutierrez",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "ICCS",
+      "job": "Commercial Cleaning Operations Manager ",
+      "branch": "Anderson Industrial Staffing"
+    },
+    {
+      "candidate": "Joshua Douglas",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "GENERAL ELECTRIC",
+      "job": "Mechanical Assembler",
+      "branch": "Greenville Industrial Staffing"
+    },
+    {
+      "candidate": "Tycoreyan  Gray ",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "AFL TELECOMMUNICATIONS",
+      "job": "Machine Operator",
+      "branch": "Greenville Industrial Staffing"
+    },
+    {
+      "candidate": "Kyle Bell",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "MICHELIN NORTH AMERICA, INC.",
+      "job": "Bloc Cutter",
+      "branch": "Anderson Industrial Outsourcing"
+    },
+    {
+      "candidate": "Shaquanna Shumate",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "GENERAL ELECTRIC",
+      "job": "Mechanical Assembler",
+      "branch": "Greenville Industrial Staffing"
+    },
+    {
+      "candidate": "Jesse Mansell",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "Ushers Machine & Tool Co.",
+      "job": "Quality Technician ",
+      "branch": "Greenville Industrial Staffing"
+    },
+    {
+      "candidate": "Jesse Mansell",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "MILLIKEN",
+      "job": "Server",
+      "branch": "Greenville Industrial Staffing"
+    },
+    {
+      "candidate": "Jessica Nash",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "MILLIKEN Pendleton Finishing",
+      "job": "Senior Machine Operator",
+      "branch": "Anderson Industrial Staffing"
+    },
+    {
+      "candidate": "Ukasha Mitchell",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "COOPER STANDARD",
+      "job": "Machine Operator",
+      "branch": "Greenville Industrial Staffing"
+    },
+    {
+      "candidate": "Ukasha Mitchell",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "KGM Gaming",
+      "job": "Re-Upholsterer and Assembler",
+      "branch": "Greenville Industrial Staffing"
+    },
+    {
+      "candidate": "Serenady  Clark ",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "BORG WARNER",
+      "job": "Material Handler",
+      "branch": "Anderson Industrial Managed Services"
+    },
+    {
+      "candidate": "Tristan Mattison",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "Norres Baggerman US LLC",
+      "job": "HR Administrator",
+      "branch": "Anderson Industrial Staffing"
+    },
+    {
+      "candidate": "Joshua Donald",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "Bosch Rexroth Corporation",
+      "job": "Assembler",
+      "branch": "Greenville Industrial Managed Services"
+    },
+    {
+      "candidate": "Ibriia Simmons",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "MILLIKEN- Cushman- Williamston",
+      "job": "Production Operator - Cushman",
+      "branch": "Anderson Industrial Staffing"
+    },
+    {
+      "candidate": "Shiesha Day",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "MICHELIN NORTH AMERICA, INC.",
+      "job": "Forklift Operator ",
+      "branch": "Greenville Industrial Outsourcing"
+    },
+    {
+      "candidate": "Jasmine Hardy",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "Aalberts Surface Technologies",
+      "job": "Operator",
+      "branch": "Greenville Industrial Staffing"
+    },
+    {
+      "candidate": "Jasmine Hardy",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "MICHELIN NORTH AMERICA, INC.",
+      "job": "Manufacturing Associate",
+      "branch": "Greenville Industrial Outsourcing"
+    },
+    {
+      "candidate": "Janija Nicholson",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "Norres Baggerman US LLC",
+      "job": "HR Administrator",
+      "branch": "Anderson Industrial Staffing"
+    },
+    {
+      "candidate": "Dezire Sease",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "Aalberts Surface Technologies",
+      "job": "Operator",
+      "branch": "Greenville Industrial Staffing"
+    },
+    {
+      "candidate": "Cameron Chapman",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "Magna Decostar",
+      "job": "Forklift Operator",
+      "branch": "Greenville Industrial Staffing"
+    },
+    {
+      "candidate": "Shaedrika Hickman",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "MICHELIN NORTH AMERICA, INC.",
+      "job": "Bloc Cutter",
+      "branch": "Anderson Industrial Outsourcing"
+    },
+    {
+      "candidate": "Yair Alvarado",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "MICHELIN NORTH AMERICA, INC.",
+      "job": "Manufacturing Associate",
+      "branch": "Greenville Industrial Outsourcing"
+    },
+    {
+      "candidate": "Gabrielle Beutler",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "Bosch Rexroth Corporation",
+      "job": "Assembler",
+      "branch": "Greenville Industrial Managed Services"
+    },
+    {
+      "candidate": "Jartavious Samples",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "ICCS",
+      "job": "Commercial Cleaning Operations Manager ",
+      "branch": "Anderson Industrial Staffing"
+    },
+    {
+      "candidate": "Dania Rodriguez Vidriales",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "MILLIKEN- Cushman- Williamston",
+      "job": "Production Operator - Cushman",
+      "branch": "Anderson Industrial Staffing"
+    },
+    {
+      "candidate": "Nikki G\u00f3mez",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "MICHELIN NORTH AMERICA, INC.",
+      "job": "Bloc Cutter",
+      "branch": "Anderson Industrial Outsourcing"
+    },
+    {
+      "candidate": "Tiffany Mcwatters",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "Norres Baggerman US LLC",
+      "job": "HR Administrator",
+      "branch": "Anderson Industrial Staffing"
+    },
+    {
+      "candidate": "Devarius Porter",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "COOPER STANDARD",
+      "job": "Machine Operator",
+      "branch": "Greenville Industrial Staffing"
+    },
+    {
+      "candidate": "Shayla Wright",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "Norres Baggerman US LLC",
+      "job": "HR Administrator",
+      "branch": "Anderson Industrial Staffing"
+    },
+    {
+      "candidate": "Terry Jenkins",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "ICCS",
+      "job": "Commercial Cleaning Operations Manager ",
+      "branch": "Anderson Industrial Staffing"
+    },
+    {
+      "candidate": "Nancy Rincon",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "MILLIKEN- Cushman- Williamston",
+      "job": "Production Operator - Cushman",
+      "branch": "Anderson Industrial Staffing"
+    },
+    {
+      "candidate": "Susmitha Yagateela",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "Sealevel Systems",
+      "job": "Engineering Technician",
+      "branch": "Anderson Industrial Staffing"
+    },
+    {
+      "candidate": "Eliar Torres",
+      "submitted": "09/01/2026",
+      "reviewed": "09/01/2026",
+      "bucket": "Reviewed Same Day",
+      "client": "COOPER STANDARD",
+      "job": "Machine Operator",
+      "branch": "Greenville Industrial Staffing"
+    }
+  ],
+  "review_same_day_count": 42,
+  "review_total": 42,
+  "interviews_by_recruiter": [
+    {
+      "recruiter": "Karen Cruz",
+      "count": 1
+    }
+  ],
+  "interview_notes_compliance": [
+    {
+      "bucket": "Interview Note within 90 Days from Start",
+      "count": 5
+    },
+    {
+      "bucket": "Interview Note > 90 Days from Start",
+      "count": 1
+    }
+  ],
+  "approval_trend": [
+    {
+      "month": "2025-Oct",
+      "Early": 0,
+      "On Time": 63,
+      "Late": 2
+    },
+    {
+      "month": "2025-Nov",
+      "Early": 0,
+      "On Time": 49,
+      "Late": 1
+    },
+    {
+      "month": "2025-Dec",
+      "Early": 0,
+      "On Time": 32,
+      "Late": 1
+    },
+    {
+      "month": "2026-Jan",
+      "Early": 0,
+      "On Time": 47,
+      "Late": 0
+    },
+    {
+      "month": "2026-Feb",
+      "Early": 0,
+      "On Time": 51,
+      "Late": 6
+    },
+    {
+      "month": "2026-Mar",
+      "Early": 0,
+      "On Time": 88,
+      "Late": 0
+    },
+    {
+      "month": "2026-Apr",
+      "Early": 1,
+      "On Time": 40,
+      "Late": 1
+    },
+    {
+      "month": "2026-May",
+      "Early": 0,
+      "On Time": 47,
+      "Late": 1
+    },
+    {
+      "month": "2026-Jun",
+      "Early": 0,
+      "On Time": 64,
+      "Late": 2
+    },
+    {
+      "month": "2026-Jul",
+      "Early": 0,
+      "On Time": 80,
+      "Late": 3
+    },
+    {
+      "month": "2026-Aug",
+      "Early": 0,
+      "On Time": 74,
+      "Late": 4
+    },
+    {
+      "month": "2026-Sep",
+      "Early": 0,
+      "On Time": 11,
+      "Late": 0
+    }
+  ],
+  "approval_alltime": [
+    {
+      "bucket": "Late",
+      "count": 362
+    },
+    {
+      "bucket": "On Time",
+      "count": 2804
+    },
+    {
+      "bucket": "Early",
+      "count": 61
+    }
+  ],
+  "approval_alltime_total": 3227,
+  "credential_trend": [
+    {
+      "month": "2026-Jan",
+      "On Time": 520,
+      "Late": 25,
+      "None": 3
+    },
+    {
+      "month": "2026-Feb",
+      "On Time": 491,
+      "Late": 42,
+      "None": 4
+    },
+    {
+      "month": "2026-Mar",
+      "On Time": 671,
+      "Late": 31,
+      "None": 6
+    },
+    {
+      "month": "2026-Apr",
+      "On Time": 498,
+      "Late": 25,
+      "None": 4
+    },
+    {
+      "month": "2026-May",
+      "On Time": 401,
+      "Late": 16,
+      "None": 0
+    },
+    {
+      "month": "2026-Jun",
+      "On Time": 562,
+      "Late": 11,
+      "None": 4
+    },
+    {
+      "month": "2026-Jul",
+      "On Time": 634,
+      "Late": 12,
+      "None": 0
+    },
+    {
+      "month": "2026-Aug",
+      "On Time": 654,
+      "Late": 3,
+      "None": 1
+    },
+    {
+      "month": "2026-Sep",
+      "On Time": 19,
+      "Late": 0,
+      "None": 0
+    }
+  ],
+  "credential_detail": [
+    {
+      "associate": "Aixa Perez Jaramillo",
+      "job": "Manufacturing Operator",
+      "cert": "Drug: 10-Panel Urine",
+      "expires": "09/30/2026",
+      "status": "IG"
+    },
+    {
+      "associate": "Aixa Perez Jaramillo",
+      "job": "Manufacturing Operator",
+      "cert": "Greenville-GE-SR&I",
+      "expires": "11/25/2026",
+      "status": "IG"
+    },
+    {
+      "associate": "Aixa Perez Jaramillo",
+      "job": "Manufacturing Operator",
+      "cert": "Education Verification",
+      "expires": null,
+      "status": "IG"
+    },
+    {
+      "associate": "Joshua Hoff",
+      "job": "Manufacturing Operator",
+      "cert": "Drug: 10-Panel Urine",
+      "expires": "09/13/2026",
+      "status": "IG"
+    },
+    {
+      "associate": "Joshua Hoff",
+      "job": "Manufacturing Operator",
+      "cert": "Greenville-GE-SR&I",
+      "expires": "11/09/2026",
+      "status": "IG"
+    },
+    {
+      "associate": "Joshua Hoff",
+      "job": "Manufacturing Operator",
+      "cert": "Education Verification",
+      "expires": null,
+      "status": "IG"
+    },
+    {
+      "associate": "Kamari Spurgeon",
+      "job": "Manufacturing Operator",
+      "cert": "Greenville-GE-SR&I",
+      "expires": "11/24/2026",
+      "status": "IG"
+    },
+    {
+      "associate": "Kamari Spurgeon",
+      "job": "Manufacturing Operator",
+      "cert": "Drug: 10-Panel Urine",
+      "expires": "09/29/2026",
+      "status": "IG"
+    },
+    {
+      "associate": "Kamari Spurgeon",
+      "job": "Manufacturing Operator",
+      "cert": "Education Verification",
+      "expires": null,
+      "status": "IG"
+    },
+    {
+      "associate": "Ronnie Short",
+      "job": "Machinist",
+      "cert": "Drug: 10-Panel Urine",
+      "expires": "09/27/2026",
+      "status": "IG"
+    },
+    {
+      "associate": "Ronnie Short",
+      "job": "Machinist",
+      "cert": "Greenville-GE-SR&I",
+      "expires": "11/20/2026",
+      "status": "IG"
+    },
+    {
+      "associate": "Ronnie Short",
+      "job": "Machinist",
+      "cert": "Education Verification",
+      "expires": null,
+      "status": "IG"
+    },
+    {
+      "associate": "Zachary Roach",
+      "job": "Machinist",
+      "cert": "Drug Screen",
+      "expires": "10/11/2024",
+      "status": "Expiring"
+    },
+    {
+      "associate": "Zachary Roach",
+      "job": "Machinist",
+      "cert": "Greenville-GE-SR&I",
+      "expires": "11/21/2026",
+      "status": "IG"
+    },
+    {
+      "associate": "Zachary Roach",
+      "job": "Machinist",
+      "cert": "Drug: 10-Panel Urine",
+      "expires": "09/26/2026",
+      "status": "IG"
+    },
+    {
+      "associate": "Zachary Roach",
+      "job": "Machinist",
+      "cert": "Education Verification",
+      "expires": null,
+      "status": "IG"
+    },
+    {
+      "associate": "Zachary Roach",
+      "job": "Machinist",
+      "cert": "CNC Assessment",
+      "expires": null,
+      "status": "IG"
+    },
+    {
+      "associate": "Zachary Roach",
+      "job": "Machinist",
+      "cert": "Background Check",
+      "expires": "01/16/2025",
+      "status": "IG"
+    },
+    {
+      "associate": "Zachary Roach",
+      "job": "Machinist",
+      "cert": "Anderson-SR&I",
+      "expires": "01/11/2024",
+      "status": "Expired"
+    }
+  ],
+  "transactional_compliance": [
+    {
+      "branch": "Greenville",
+      "count": 1,
+      "bucket": "Compliant - Placement End"
+    }
+  ],
+  "accounts_by_ss": [
+    {
+      "account": "Aalberts",
+      "owner": "Alex Kenny"
+    },
+    {
+      "account": "SC STATE PORTS AUTHORITY",
+      "owner": "Alex Kenny"
+    },
+    {
+      "account": "GENERAL ELECTRIC",
+      "owner": "Alex Kenny"
+    },
+    {
+      "account": "AFL TELECOMMUNICATIONS",
+      "owner": "Alex Kenny"
+    },
+    {
+      "account": "WOODWARD",
+      "owner": "Alex Kenny"
+    },
+    {
+      "account": "KGM Gaming",
+      "owner": "Alex Kenny"
+    },
+    {
+      "account": "MILLIKEN - Guest House",
+      "owner": "Amanda Addington"
+    },
+    {
+      "account": "MILLIKEN & CO - MAGNOLIA",
+      "owner": "Amanda Addington"
+    },
+    {
+      "account": "COOPER STANDARD",
+      "owner": "Amanda Addington"
+    },
+    {
+      "account": "BOYSEN USA",
+      "owner": "Amanda Addington"
+    },
+    {
+      "account": "SALUS SCIENTFIC",
+      "owner": "Amanda Addington"
+    },
+    {
+      "account": "SEPRO",
+      "owner": "Amanda Addington"
+    },
+    {
+      "account": "The Bernard Group",
+      "owner": "Tomeka Pratt"
+    },
+    {
+      "account": "Bosch Security Systems, LLC",
+      "owner": "Tomeka Pratt"
+    },
+    {
+      "account": "Bosch - Rexroth",
+      "owner": "Tomeka Pratt"
+    },
+    {
+      "account": "TTI CONSUMER POWER TOOLS",
+      "owner": "Tomeka Pratt"
+    },
+    {
+      "account": "Dunlop",
+      "owner": "Tomeka Pratt"
+    },
+    {
+      "account": "Grainger",
+      "owner": "Tomeka Pratt"
+    },
+    {
+      "account": "Magna Decostar",
+      "owner": "Andy Hwang"
+    },
+    {
+      "account": "PRISMA HEALTH",
+      "owner": "Andy Hwang"
+    },
+    {
+      "account": "New Entity Distribution Corp",
+      "owner": "Andy Hwang"
+    },
+    {
+      "account": "VERICOR POWER SYSTEMS",
+      "owner": "Andy Hwang"
+    },
+    {
+      "account": "MICHELIN NORTH AMERICA, INC.",
+      "owner": "Andy Hwang"
+    },
+    {
+      "account": "Inactive Account",
+      "owner": "Primary"
+    },
+    {
+      "account": "Greenville Airport",
+      "owner": "Alex Kenny"
+    },
+    {
+      "account": "Ushers",
+      "owner": "Alex Kenny"
+    },
+    {
+      "account": "Dairy Farmers",
+      "owner": "Amanda Addington"
+    }
+  ],
+  "ss_account_counts": [
+    {
+      "owner": "Alex Kenny",
+      "count": 8
+    },
+    {
+      "owner": "Amanda Addington",
+      "count": 7
+    },
+    {
+      "owner": "Tomeka Pratt",
+      "count": 6
+    },
+    {
+      "owner": "Andy Hwang",
+      "count": 5
+    }
+  ],
+  "start_audit": [
+    {
+      "jobAdded": "08/26/2026",
+      "requestedStart": "09/29/2026",
+      "leadTime": 34.0,
+      "totalTime": 6.0,
+      "onTime": 28.0,
+      "client": "GENERAL ELECTRIC",
+      "job": "Manufacturing Operator",
+      "branch": "Greenville Industrial Managed Services"
+    },
+    {
+      "jobAdded": "08/26/2026",
+      "requestedStart": "09/22/2026",
+      "leadTime": 27.0,
+      "totalTime": 6.0,
+      "onTime": 21.0,
+      "client": "GENERAL ELECTRIC",
+      "job": "Manufacturing Operator",
+      "branch": "Greenville Industrial Managed Services"
+    },
+    {
+      "jobAdded": "08/07/2026",
+      "requestedStart": "09/01/2026",
+      "leadTime": 25.0,
+      "totalTime": 25.0,
+      "onTime": 0.0,
+      "client": "GENERAL ELECTRIC",
+      "job": "Manufacturing Operator",
+      "branch": "Greenville Industrial Managed Services"
+    },
+    {
+      "jobAdded": "08/05/2026",
+      "requestedStart": "09/22/2026",
+      "leadTime": 48.0,
+      "totalTime": 27.0,
+      "onTime": 21.0,
+      "client": "GENERAL ELECTRIC",
+      "job": "Machinist",
+      "branch": "Greenville Industrial Managed Services"
+    },
+    {
+      "jobAdded": "07/29/2026",
+      "requestedStart": "09/15/2026",
+      "leadTime": 48.0,
+      "totalTime": 34.0,
+      "onTime": 14.0,
+      "client": "GENERAL ELECTRIC",
+      "job": "Machinist",
+      "branch": "Greenville Industrial Managed Services"
+    }
+  ],
+  "avg_lead_time_to_fill": 36.4,
+  "avg_total_time_to_fill": 19.6,
+  "client_checkins_this_month": [
+    {
+      "date": "9/1/2026",
+      "account": "KGM Gaming",
+      "contact": "Gene Sanders",
+      "subject": "Email: MAU Check In",
+      "assigned": "Talitha Shaner"
+    }
+  ],
+  "client_checkins_count": 1
+}
